@@ -1,0 +1,31 @@
+{
+  "name": "solidity_practice",
+  "version": "1.0.0",
+  "description": "Using Hardhat and playing with solidity",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rongfengye/solidity_practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rongfengye/solidity_practice/issues"
+  },
+  "homepage": "https://github.com/Rongfengye/solidity_practice#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.6",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.6.0",
+    "chai": "^4.3.6",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.7",
+    "hardhat": "^2.9.6"
+  }
+}
