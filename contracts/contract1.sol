@@ -91,14 +91,6 @@
 //             WETH.deposit{value: msg.value}();
 //         }
 //     }
-
-//     function call (address payable _to, uint256 _value, bytes calldata _data) external onlyOwner payable {
-//         require(_to != address(0));
-//         (bool _success, bytes memory _result) = _to,call{value: _value}(_data);
-//         require(_success);
-//         return _result;
-//     }
-
 //     // // gonna be swapExactTokensForTokens for simplicity first
 //     // function snipeToken(uint256 _ethAmountToCoinbase,
 //     //                     uint amountIn, uint amountOutMin, 
