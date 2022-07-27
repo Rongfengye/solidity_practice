@@ -27,9 +27,9 @@ describe("CHECKING BASIC LogTxDetails BEHAVIOR", function () {
     const WETHaddr = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
     const UniswapV2Router02Addr = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D';
     const txResponse = await etd.LogTxDetails(1, 2, 3, [shibAddr, WETHaddr], UniswapV2Router02Addr, 4, [5, 6]);
+    //1, 2, 3, [0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, 4, [5, 6]
     
     console.log("TEST: Finished making one function call");
-    // expect(txResponse).to.emit(etd, 'Snipe');
     console.log("this is txResponse object\n", txResponse);
     const waitObject = await txResponse.wait();
 
@@ -38,14 +38,19 @@ describe("CHECKING BASIC LogTxDetails BEHAVIOR", function () {
  
     console.log("checking if we can view our emitted events");
 
-
     const decodedData = ethers.utils.defaultAbiCoder.decode(['uint256','uint256','uint256','address[]','address','uint256','uint256[]'], waitObject.events[0].data);
     console.log(decodedData);
    
-    console.log("TEST: Checking the transaction logs");
+    console.log("TEST: Checking the transaction logs after TWO");
+    const txResponse2 = await etd.LogTxDetails(7, 8, 9, [UniswapV2Router02Addr, shibAddr], WETHaddr, 10, [11, 12]);
 
-    
+    console.log("TEST: Finished making second function call");
+    console.log("this is txResponse object\n", txResponse2);
+    const waitObject2 = await txResponse2.wait();
+    console.log("this is second txResponse.wait() object\n", waitObject2);
   })
 
   // finish testing then deploy
+  // https://rinkeby.etherscan.io/tx/0x25502f082d2b34aa177345eaebfde43306f00e23995d34b68fb7d6fa65af8060
+  //https://rinkeby.etherscan.io/tx/0x805cbc6b25a99a84f7cd28435841fb4d111cfdab1982a23b022843ae8916e09a
 })

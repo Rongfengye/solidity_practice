@@ -5,6 +5,8 @@ pragma experimental ABIEncoderV2;
 
 import "hardhat/console.sol";
 
+// deploying this contract
+// https://medium.com/coinmonks/the-many-ways-to-deploy-your-smart-contract-to-rinkeby-network-38cadf7b20be
 contract EmitTxDetails {
   // Declaring an event
   // https://www.tutorialspoint.com/solidity/solidity_events.htm
